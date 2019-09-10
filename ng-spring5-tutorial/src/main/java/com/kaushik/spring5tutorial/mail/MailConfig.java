@@ -11,6 +11,11 @@ import org.springframework.mail.javamail.JavaMailSender;
 @Configuration
 public class MailConfig {
 
+	
+	@Bean
+	public DemoBean demoBean() {
+		return new DemoBean();
+	}
 
 	@Bean
 	@ConditionalOnProperty(name="spring.mail.host",
