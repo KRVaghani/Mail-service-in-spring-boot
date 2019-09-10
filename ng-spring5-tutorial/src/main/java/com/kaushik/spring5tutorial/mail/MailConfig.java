@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
 
 @Configuration
 public class MailConfig {
@@ -27,6 +28,8 @@ public class MailConfig {
 	@Bean
 	@ConditionalOnProperty("spring.mail.host")
 	public MailSender smtpMailSender(JavaMailSender javaMailSender) {
+		
+		demoBean();
 		return new SmtpMailSender(javaMailSender);
 		
 	}
